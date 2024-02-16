@@ -9,7 +9,9 @@ module.exports.viewAll = async function(req,res){
 
 //profile
 module.exports.viewProfile= async function(req,res){
-    const course = await Course.findByPk(req.params.id);
+    const course = await Course.findByPk(req.params.id,{
+        include: 'students'
+    });
     res.render('course/profile', {course})
 }
 
@@ -32,7 +34,7 @@ module.exports.addCourse = async function(req,res){
         instructor_name: req.body.instructor_name,
         description: req.body.description
     });
-    res.redirect(`/course/profile/${course.id}`);
+    res.redirect(`/courses/profile/${course.id}`);
 }
 
 //render edit form
