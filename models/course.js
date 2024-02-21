@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'students',
         foreignKey: 'course_id',
         otherKey: 'student_id',
-        timestamps:false
+        timestamps: false
       })
     }
   };

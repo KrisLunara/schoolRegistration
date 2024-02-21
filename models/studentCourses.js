@@ -16,17 +16,17 @@ module.exports = (sequelize, DataTypes) => {
   StudentCourses.init({
     student_id:{
       type:DataTypes.INTEGER,
-      primaryKey:true
+      primaryKey: true
     },
     course_id:{
       type:DataTypes.INTEGER,
-      primaryKey:true
+      primaryKey: true
     }
   }, {
     sequelize,
     modelName: 'StudentCourses',
     tableName: 'student_courses',
-    timestamp: false
+    timestamps: false
   });
   return StudentCourses;
 };

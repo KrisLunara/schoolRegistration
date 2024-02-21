@@ -14,7 +14,7 @@ module.exports.viewProfile= async function(req,res){
     const courses = await Course.findAll();
     let availableCourses = [];
     for (let i=0; i<courses.length; i++){
-        if (!studentHasCourse(student,courses[i])){
+        if (!studentHasCourse(student, courses[i])){
             availableCourses.push(courses[i]);
         }
     }
@@ -88,4 +88,15 @@ function studentHasCourse(student, course){
         }
     }
     return false
+}
+
+//delete course from student
+module.exports.removeCourse = async function(req,res){
+    await StudentCourses.destroy({
+        where: {
+            student_id: req.params.studentId,
+            course_id: req.params.courseId
+        }
+    });
+    res.redirect(`/students/profile/${req.params.studentId}`)
 }
