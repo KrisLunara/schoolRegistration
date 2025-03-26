@@ -82,7 +82,7 @@ module.exports.enrollStudent = async function (req,res){
 }
 
 function studentHasCourse(student, course){
-    for(let i=0; i<student.courses.length;i++){
+    for(let i=0; i<student.courses.length; i++){
         if (course.id === student.courses[i].id){
             return true
         }

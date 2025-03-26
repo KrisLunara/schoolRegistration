@@ -62,7 +62,7 @@ module.exports.updateCourse = async function(req,res){
             id: req.params.id
         }
     });
-    res.redirect(`/course/profile/${req.params.id}`);
+    res.redirect(`/courses/profile/${req.params.id}`);
 }
 
 //delete

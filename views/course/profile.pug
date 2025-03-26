@@ -16,7 +16,7 @@ block content
                         option(value= student.id) #{student.first_name} #{student.last_name}
                 button.button.primary(type='submit') Enroll
         else
-            p Mo remaining students are eligible
+            p No remaining students are eligible
     h4 Enrolled Students
         if course.students.length>0
             table
@@ -36,4 +36,4 @@ block content
                                 a(href=`/students/profile/${student.id}`) View Student
                                  a(href=`/courses/${course.id}/removeStudent/${student.id}`) Remove Student
         else
-            p No students ar enrolled in this course.
+            p No students are enrolled in this course.
